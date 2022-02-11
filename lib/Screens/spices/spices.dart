@@ -81,7 +81,7 @@ class _SpicesMenuState extends State<SpicesMenu> {
               icon: Icon(Icons.logout), label: 'Logout'),
         ],
       ),
-      backgroundColor: Color(0xFF135821),
+      backgroundColor: Color(0xFFF5F5F5),
       body: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
