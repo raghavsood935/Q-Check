@@ -1,0 +1,5 @@
+0 Foeniculum
+1 Anethum
+2 Carvi
+3 Cumin
+4 Unknown

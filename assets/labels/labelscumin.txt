@@ -1,0 +1,6 @@
+0 Cumin
+1 Nigel
+2 Anethum
+3 Finel
+4 Carvi
+5 Unknown
