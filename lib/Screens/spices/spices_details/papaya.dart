@@ -23,7 +23,7 @@ class _CaricaPapayaState extends State<CaricaPapaya> {
           },
         ),
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -105,7 +105,7 @@ class _CaricaPapayaState extends State<CaricaPapaya> {
                             child: Image.asset(
                               'assets/images/Carica papaya.jpg',
                               width: double.infinity,
-                              height: 180,
+                              height: 210,
                               fit: BoxFit.cover,
                             ),
                           ),

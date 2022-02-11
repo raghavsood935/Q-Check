@@ -23,7 +23,7 @@ class _FoeniculumVulgareState extends State<FoeniculumVulgare> {
           },
         ),
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -115,7 +115,7 @@ class _FoeniculumVulgareState extends State<FoeniculumVulgare> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 410,
+                          height: 440,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

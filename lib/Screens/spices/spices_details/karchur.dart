@@ -23,7 +23,7 @@ class _CurcumaZeoderiaState extends State<CurcumaZeoderia> {
           },
         ),
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -115,7 +115,7 @@ class _CurcumaZeoderiaState extends State<CurcumaZeoderia> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 230,
+                          height: 260,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

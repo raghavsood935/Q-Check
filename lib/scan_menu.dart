@@ -95,7 +95,7 @@ class _ScanMenuState extends State<ScanMenu> {
           onPressed: () {},
         ),
       ),
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body:
           // _loading
           //  ? Container(

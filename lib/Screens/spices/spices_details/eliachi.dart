@@ -21,7 +21,7 @@ class _ElettariaCardamomumState extends State<ElettariaCardamomum> {
           },
         ),
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -113,7 +113,7 @@ class _ElettariaCardamomumState extends State<ElettariaCardamomum> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 410,
+                          height: 440,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

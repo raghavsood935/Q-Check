@@ -106,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       key: _formKey,
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFF135821),
       body: Container(
         width: double.infinity,
         height: double.infinity,
