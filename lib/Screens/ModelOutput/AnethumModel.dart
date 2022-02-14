@@ -204,10 +204,14 @@ class _ModelTestAnethumState extends State<ModelTestAnethum> {
 
                           //if image is selected then it will be displyaed and if not default image will be shown
                           child: _image != null
-                              ? const Image(
-                                  fit: BoxFit.fill,
-                                  image:
-                                      AssetImage('assets/images/scan_bg.png'),
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.file(
+                                    _image!,
+                                    width: 200,
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  ),
                                 )
                               : const Image(
                                   fit: BoxFit.fill,

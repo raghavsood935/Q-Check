@@ -45,10 +45,25 @@ class _MenuPageState extends State<MenuPage> {
     }
   }
 
+  Future<bool> handleWillPop() async {
+    final now = DateTime.now();
+    final backButtonHasNotBeenPressedOrSnackBarHasBeenClosed =
+        backButtonPressTime == null ||
+            now.difference(backButtonPressTime) > snackBarDuration;
+
+    if (backButtonHasNotBeenPressedOrSnackBarHasBeenClosed) {
+      backButtonPressTime = now;
+      Scaffold.of(context).showSnackBar(snackBar);
+      return false;
+    }
+
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () => handleWillPop(context),
+      onWillPop: () => handleWillPop(),
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color(0xFF135821),
@@ -210,21 +225,6 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
     );
-  }
-
-  Future<bool> handleWillPop(BuildContext context) async {
-    final now = DateTime.now();
-    final backButtonHasNotBeenPressedOrSnackBarHasBeenClosed =
-        backButtonPressTime == null ||
-            now.difference(backButtonPressTime) > snackBarDuration;
-
-    if (backButtonHasNotBeenPressedOrSnackBarHasBeenClosed) {
-      backButtonPressTime = now;
-      Scaffold.of(context).showSnackBar(snackBar);
-      return false;
-    }
-
-    return true;
   }
 }
 
