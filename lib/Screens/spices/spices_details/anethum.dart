@@ -115,7 +115,7 @@ class _AnethumGraveolensState extends State<AnethumGraveolens> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 300,
+                          height: 320,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

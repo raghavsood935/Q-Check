@@ -12,7 +12,7 @@ class HelpInfo extends StatelessWidget {
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_outlined),
+          icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -74,7 +74,7 @@ class HelpInfo extends StatelessWidget {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 0, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 250,
+                          height: 260,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),
@@ -154,7 +154,7 @@ class HelpInfo extends StatelessWidget {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 150,
+                          height: 160,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

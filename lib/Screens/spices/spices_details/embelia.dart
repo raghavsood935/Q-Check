@@ -115,7 +115,7 @@ class _EmbeliaRibesState extends State<EmbeliaRibes> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 290,
+                          height: 300,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

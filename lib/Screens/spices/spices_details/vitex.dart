@@ -116,7 +116,7 @@ class _VitexAgnusCastusState extends State<VitexAgnusCastus> {
                         padding: EdgeInsetsDirectional.fromSTEB(45, 10, 45, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 380,
+                          height: 420,
                           decoration: BoxDecoration(
                             color: Color(0xFFFFFAFA),
                             borderRadius: BorderRadius.circular(15),

@@ -288,7 +288,7 @@ class _SpicesMenuState extends State<SpicesMenu> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       card_widget(
-                        LabelText: 'Anethum Graveolens\n(Till)',
+                        LabelText: 'Anethum Graveolens\n(Dill)',
                         ImagePath: 'assets/images/anethum_graveolens.png',
                         builder: ModelTestAnethum(),
                       ),

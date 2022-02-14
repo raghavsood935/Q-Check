@@ -33,9 +33,196 @@ class _LoginState extends State<Login> {
     content: Text('Press back again to leave'),
     duration: snackBarDuration,
   );
-  
+
   late DateTime backButtonPressTime;
-  
+
+  onAlertButtonPressed(context) {
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "ERROR!",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 22),
+      ),
+      content: Text(
+        errorMessage!,
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(
+            'OK',
+            style: GoogleFonts.poppins(
+                textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  onAlertButtonPressed1(context) {
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Some Error Occured!",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 22),
+      ),
+      content: Text(
+        "Please Enter The Email ",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(
+            'OK',
+            style: GoogleFonts.poppins(
+                textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+          ),
+          onPressed: () {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  onAlertButtonPressed2(context) {
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Some Error Occured!",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 22),
+      ),
+      content: Text(
+        "Please Enter The Password ",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(
+            'OK',
+            style: GoogleFonts.poppins(
+                textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+          ),
+          onPressed: () {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  onAlertButtonPressed3(context) {
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Some Error Occured!",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 22),
+      ),
+      content: Text(
+        "Please Check Your Username/Email",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(
+            'OK',
+            style: GoogleFonts.poppins(
+                textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+          ),
+          onPressed: () {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  onAlertButtonPressed4(context) {
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Some Error Occured!",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 22),
+      ),
+      content: Text(
+        "Please Check Your Password\nMin 6 Characters Required",
+        style: GoogleFonts.poppins(
+            textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+      ),
+      actions: <Widget>[
+        TextButton(
+          child: Text(
+            'OK',
+            style: GoogleFonts.poppins(
+                textStyle: Theme.of(context).textTheme.bodyText1, fontSize: 15),
+          ),
+          onPressed: () {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   Future<bool> handleWillPop(BuildContext context) async {
     final now = DateTime.now();
     final backButtonHasNotBeenPressedOrSnackBarHasBeenClosed =
@@ -50,6 +237,7 @@ class _LoginState extends State<Login> {
 
     return true;
   }
+
   @override
   void initState() {
     passwordVisibility1 = false;
@@ -65,7 +253,7 @@ class _LoginState extends State<Login> {
             elevation: 0,
             iconTheme: IconThemeData(color: Color(0xff104e0b)),
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_outlined),
+              icon: Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -105,18 +293,21 @@ class _LoginState extends State<Login> {
                     ),
 
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 5),
                       child: TextFormField(
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (value!.isEmpty) {
+                              onAlertButtonPressed1(context);
                               return ("Please Enter your Email");
                             }
                             // reg expression for email validation
-                            if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                            if (!RegExp(
+                                    "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                 .hasMatch(value)) {
+                              onAlertButtonPressed3(context);
                               return ("Please Enter a valid email");
                             }
                             return null;
@@ -128,7 +319,8 @@ class _LoginState extends State<Login> {
                           decoration: InputDecoration(
                             labelText: 'Username or Email',
                             labelStyle: GoogleFonts.poppins(
-                                textStyle: Theme.of(context).textTheme.bodyText1,
+                                textStyle:
+                                    Theme.of(context).textTheme.bodyText1,
                                 fontSize: 14,
                                 color: Colors.black54),
                             enabledBorder: OutlineInputBorder(
@@ -145,16 +337,18 @@ class _LoginState extends State<Login> {
                           style: theme.bodyText1),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 5),
                       child: TextFormField(
                           controller: passwordController,
                           validator: (value) {
                             RegExp regex = new RegExp(r'^.{6,}$');
                             if (value!.isEmpty) {
+                              onAlertButtonPressed2(context);
                               return ("Password is required for Login");
                             }
                             if (!regex.hasMatch(value)) {
+                              onAlertButtonPressed4(context);
                               return ("Enter Valid Password(Min. 6 Characters)");
                             }
                           },
@@ -182,8 +376,8 @@ class _LoginState extends State<Login> {
                               ),
                               suffixIcon: InkWell(
                                 onTap: () => setState(
-                                  () =>
-                                      passwordVisibility1 = !passwordVisibility1,
+                                  () => passwordVisibility1 =
+                                      !passwordVisibility1,
                                 ),
                                 child: Icon(
                                   passwordVisibility1
@@ -208,7 +402,8 @@ class _LoginState extends State<Login> {
                         },
                         child: Text('Forgot Password?',
                             style: GoogleFonts.poppins(
-                                textStyle: Theme.of(context).textTheme.bodyText1,
+                                textStyle:
+                                    Theme.of(context).textTheme.bodyText1,
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xff104e0b))),
@@ -229,7 +424,8 @@ class _LoginState extends State<Login> {
                         ),
                         child: MaterialButton(
                           onPressed: () async {
-                            signIn(emailController.text, passwordController.text);
+                            signIn(
+                                emailController.text, passwordController.text);
                             setState(() {
                               isLoading = true;
                             });
@@ -282,7 +478,8 @@ class _LoginState extends State<Login> {
                           child: Text(
                             'SIGN UP',
                             style: GoogleFonts.poppins(
-                                textStyle: Theme.of(context).textTheme.bodyText1,
+                                textStyle:
+                                    Theme.of(context).textTheme.bodyText1,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xff104e0b)),
@@ -335,12 +532,15 @@ class _LoginState extends State<Login> {
           default:
             errorMessage = "An undefined Error happened.";
         }
-        Fluttertoast.showToast(msg: errorMessage!);
-        print(error.code);
+        onAlertButtonPressed(context);
+        Fluttertoast.showToast(msg: "Please Try Again");
+        setState(() {
+          isLoading = false;
+        });
       }
     }
     SharedPreferences prefs = await SharedPreferences.getInstance();
-            prefs.setString('email', 'useremail@gmail.com');
+    prefs.setString('email', 'useremail@gmail.com');
     @override
     void dispose() {
       super.dispose();
