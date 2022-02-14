@@ -38,7 +38,7 @@ class _SpicesMenuState extends State<SpicesMenu> {
       currentIndex = index;
     });
     if (currentIndex == 0) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 1) {
@@ -46,11 +46,11 @@ class _SpicesMenuState extends State<SpicesMenu> {
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 2) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 3) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
   }

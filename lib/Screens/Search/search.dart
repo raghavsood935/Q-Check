@@ -180,19 +180,19 @@ class _SearchState extends State<Search> {
       currentIndex = index;
     });
     if (currentIndex == 0) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 1) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 2) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 3) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
   }
@@ -236,19 +236,22 @@ class _SearchState extends State<Search> {
         body: Column(children: <Widget>[
           Container(
             margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
-            child: TextField(
-              onChanged: SearchOperation,
-              controller: textController,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search, color: Colors.black),
-                hintText: "Search Spices And Herbs",
-                enabledBorder: new OutlineInputBorder(
-                  borderRadius: new BorderRadius.circular(35.0),
-                  borderSide: BorderSide(color: Color(0xff104e0b)),
-                ),
-                focusedBorder: new OutlineInputBorder(
-                  borderRadius: new BorderRadius.circular(35.0),
-                  borderSide: BorderSide(color: Color(0xff104e0b)),
+            child: SizedBox(
+              height: 50,
+              child: TextField(
+                onChanged: SearchOperation,
+                controller: textController,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search, color: Colors.black),
+                  hintText: "Search Spices And Herbs",
+                  enabledBorder: new OutlineInputBorder(
+                    borderRadius: new BorderRadius.circular(35.0),
+                    borderSide: BorderSide(color: Color(0xff104e0b)),
+                  ),
+                  focusedBorder: new OutlineInputBorder(
+                    borderRadius: new BorderRadius.circular(35.0),
+                    borderSide: BorderSide(color: Color(0xff104e0b)),
+                  ),
                 ),
               ),
             ),

@@ -48,22 +48,20 @@ class _ProfilePageState extends State<ProfilePage> {
     setState(() {
       currentIndex = index;
     });
-    @override
-    void initstate() {}
     if (currentIndex == 0) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 1) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 2) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
     if (currentIndex == 3) {
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => pages[currentIndex]));
     }
   }
