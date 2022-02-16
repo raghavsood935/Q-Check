@@ -24,6 +24,7 @@ class CreateAccount2 extends StatefulWidget {
 class _CreateAccount2State extends State<CreateAccount2> {
   String? dropDownValue;
   bool? checkboxListTileValue;
+  bool isLoading = false;
   String? userAddress;
   final _formKey = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
@@ -185,17 +186,28 @@ class _CreateAccount2State extends State<CreateAccount2> {
                             password: widget.obj.password,
                             preference: dropDownValue,
                             address: addressEditingController.text);
-
+                        setState(() {
+                          isLoading = true;
+                        });
                         signUp(widget.obj.email, widget.obj.password);
                       },
-                      child: Text(
-                        'Sign In',
-                        style: GoogleFonts.poppins(
-                            textStyle: Theme.of(context).textTheme.bodyText1,
-                            fontSize: 18,
-                            // fontWeight: FontWeight.w600,
-                            color: Colors.white),
-                      ),
+                      child: (isLoading)
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                                strokeWidth: 1.5,
+                              ))
+                          : Text(
+                              'Sign Up',
+                              style: GoogleFonts.poppins(
+                                  textStyle:
+                                      Theme.of(context).textTheme.bodyText1,
+                                  fontSize: 18,
+                                  // fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
                     ),
                   ),
                 ),
@@ -276,9 +288,10 @@ class _CreateAccount2State extends State<CreateAccount2> {
         .doc(user.uid)
         .set(userModel.toMap());
 
-    Fluttertoast.showToast(msg: "Account created Successfully :) ");
+    Fluttertoast.showToast(
+        msg: "Account created Successfully \n Please Login Now");
 
     Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (context) => MenuPage()), (route) => false);
+        MaterialPageRoute(builder: (context) => Login()), (route) => false);
   }
 }
