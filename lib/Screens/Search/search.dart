@@ -199,7 +199,7 @@ class _SearchState extends State<Search> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color(0xFF135821),
           type: BottomNavigationBarType.fixed,
@@ -244,7 +244,7 @@ class _SearchState extends State<Search> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search, color: Colors.black),
                   hintText: "Search Spices And Herbs",
-                  enabledBorder: new OutlineInputBorder(
+                  enabledBorder: new OutlineInputBorder( 
                     borderRadius: new BorderRadius.circular(35.0),
                     borderSide: BorderSide(color: Color(0xff104e0b)),
                   ),
