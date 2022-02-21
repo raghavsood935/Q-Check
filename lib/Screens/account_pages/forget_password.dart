@@ -15,6 +15,7 @@ class ForgetPassword extends StatefulWidget {
 }
 
 class _ForgetPasswordState extends State<ForgetPassword> {
+  bool isLoading = false;
   TextEditingController controller = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,26 +119,38 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   ),
                   child: MaterialButton(
                     onPressed: () async {
+                      setState(() {
+                        isLoading = true;
+                      });
                       await FirebaseAuth.instance
                           .sendPasswordResetEmail(email: controller.text)
                           .then((value) => {
                                 Fluttertoast.showToast(
                                     msg:
-                                        "Reset link has been sent succesfully"),
+                                        "Password Reset link has been sent succesfully"),
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Login()))
                               });
                     },
-                    child: Text(
-                      'Reset',
-                      style: GoogleFonts.poppins(
-                          textStyle: Theme.of(context).textTheme.bodyText1,
-                          fontSize: 18,
-                          // fontWeight: FontWeight.w600,
-                          color: Colors.white),
-                    ),
+                    child: (isLoading)
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 1.5,
+                            ))
+                        : Text(
+                            'Reset',
+                            style: GoogleFonts.poppins(
+                                textStyle:
+                                    Theme.of(context).textTheme.bodyText1,
+                                fontSize: 18,
+                                // fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
                   ),
                 ),
               ),

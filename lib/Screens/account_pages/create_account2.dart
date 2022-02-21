@@ -10,7 +10,6 @@ import 'package:q_check/Screens/Home/menu_page.dart';
 import 'package:q_check/model/user_model.dart';
 import 'package:q_check/theme_data.dart';
 import 'dart:ui';
-
 import 'dropdown_button.dart';
 
 class CreateAccount2 extends StatefulWidget {
