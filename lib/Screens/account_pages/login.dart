@@ -390,7 +390,7 @@ class _LoginState extends State<Login> {
                           style: theme.bodyText1),
                     ),
 
-                    Padding(
+                    /*Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(220, 10, 5, 20),
                       child: GestureDetector(
                         onTap: () {
@@ -408,7 +408,7 @@ class _LoginState extends State<Login> {
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xff104e0b))),
                       ),
-                    ),
+                    ),*/
 
                     // "Login" ---> Button Widget //
 
